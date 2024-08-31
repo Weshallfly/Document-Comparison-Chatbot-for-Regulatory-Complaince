@@ -95,6 +95,7 @@ def get_retrievers(pdf_path):
     
 def get_answer(query,  retriever1, retriever2):
     import warnings
+    import streamlit as st
     warnings.filterwarnings("ignore")
     from langchain.prompts import PromptTemplate
     from langchain.chains import RetrievalQA
@@ -141,6 +142,7 @@ def get_answer(query,  retriever1, retriever2):
 
 def compare_answers(query, retriever1, retriever2, retriever3, retriever4):
     from langchain_groq import ChatGroq
+    import streamlit as st
     llm = ChatGroq(groq_api_key =st.secrets["API_KEY"]["GROQ"], model = 'llama3-70b-8192', temperature=0.05)
     
     answer1 = get_answer(query, retriever1, retriever2)
