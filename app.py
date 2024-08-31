@@ -129,7 +129,7 @@ def main():
                     st.markdown(response)
                 st.session_state.history.append({"role": "assistant", "content": response})
         else:
-            st.write("Please upload a PDF files to ask query")
+            st.write("Please upload a PDF file to start the chat")
 
 if __name__ == "__main__":
     main()
